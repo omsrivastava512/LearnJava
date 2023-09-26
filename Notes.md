@@ -1,0 +1,7 @@
+/* Don't run */
+String myString = new String("Hello, World!");      
+  |      ↓
+  ↓    object name : myString; 
+  class name : String  
+
+    
