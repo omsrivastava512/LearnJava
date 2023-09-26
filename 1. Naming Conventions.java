@@ -24,9 +24,9 @@ int this_one_is_annoying;
 int do-not-use-these;
 
 /*----------------------------------------------------------------------------*/
-//Exercise: Define these sentences
+//Exercise: Define these sentences [Check Notes.md]
   //1.
-  String myString = new String("Hello, World!");
+  String myString = new String("Hello, World!"); 
 
 
 
