@@ -3,7 +3,7 @@ Program to Convert Numeric values from String to Double
 
 *******************************************************************************/
 import java.io.Console;
-public class Main
+ class Convert
 {   static String c = new String();
 
     static boolean check(final String c){
