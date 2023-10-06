@@ -10,7 +10,7 @@ import java.io.Console;
         boolean chk=false;
             int i=0; 				//using i as an index variable to access array characters
             while (c.charAt(i) == ' ') {
-                    i++;
+                    i++; 
                 }
             if(c.charAt(i)=='-'||c.charAt(i)=='+')
                 i++;				//increment i value if the user has input a signed number
