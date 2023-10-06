@@ -17,7 +17,7 @@ import java.io.Console;
   // Iterate through the string to check for valid numerical characters
     while(i<c.length())			
     {            
-      if(c.charAt(i)>='.' || c.charAt(i)<='9')		
+      if(c.charAt(i)>='.' && c.charAt(i)<='9')		
       	return true;
       	if(c.charAt(i)=='/') 			//since '/' lies b/w '.' and '9' in the character map
       	return false;
