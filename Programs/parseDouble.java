@@ -20,7 +20,7 @@ import java.io.Console;
             {            
               if(c.charAt(i)>='.' && c.charAt(i)<='9')		
               	chk=true;
-              	else chk=false;
+              	else return false;
               	if(c.charAt(i)=='/') 			//since '/' lies b/w '.' and '9' in the character map
               	return false;
               	i++;
