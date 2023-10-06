@@ -3,7 +3,7 @@ Program to Convert Numeric values from String to Double
 
 *******************************************************************************/
 import java.io.Console;
- class Convert
+ class Main
 {   static String c = new String();
 
     static boolean check(final String c){
@@ -49,21 +49,22 @@ if(!check(c)) return 0;
         // Convert characters to double
         while ((i)<c.length()) {            
         
-           if(c.charAt(i)=='.')	{       	// Decimal found
+           if(c.charAt(i)=='.'&&decimal==0)	{       	// First decimal found
                j=i;
-           result+=.2;      // Exception
+               decimal=1;
+            result+=.2;      // Exception
            }
             result = result * 10 + ((int)c.charAt(i) - '0');
             i++;
         }
         
-    j++;
+    
 	// Storing decimal numbers 
    
         while(j<c.length()){		
             if(c.charAt(i)=='.')		// Found another decimal
             break;
-            decimal=decimal/10;		// Placing decimal before the numbers
+            result=result/10;		// Placing decimal before the numbers
             j++;
         }
         
