@@ -7,24 +7,26 @@ import java.io.Console;
 {   static String c = new String();
 
     static boolean check(final String c){
-    int i=0; 				//using i as an index variable to access array characters
-    while (c.charAt(i) == ' ') {
-            i++;
-        }
-    if(c.charAt(i)=='-'||c.charAt(i)=='+')
-        i++;				//increment i value if the user has input a signed number
-    
-  // Iterate through the string to check for valid numerical characters
-    while(i<c.length())			
-    {            
-      if(c.charAt(i)>='.' && c.charAt(i)<='9')		
-      	return true;
-      	if(c.charAt(i)=='/') 			//since '/' lies b/w '.' and '9' in the character map
-      	return false;
-      	i++;
-    }
-    //  
-	 return false;		
+        boolean chk=false;
+            int i=0; 				//using i as an index variable to access array characters
+            while (c.charAt(i) == ' ') {
+                    i++;
+                }
+            if(c.charAt(i)=='-'||c.charAt(i)=='+')
+                i++;				//increment i value if the user has input a signed number
+            
+          // Iterate through the string to check for valid numerical characters
+            while(i<c.length())			
+            {            
+              if(c.charAt(i)>='.' && c.charAt(i)<='9')		
+              	chk=true;
+              	else chk=false;
+              	if(c.charAt(i)=='/') 			//since '/' lies b/w '.' and '9' in the character map
+              	return false;
+              	i++;
+            }
+            //  
+        	 return chk;		
 }
 /* Convert the given string to a double */
 static double stringToDouble(final String c) {
