@@ -2,7 +2,8 @@
 Program to Convert Numeric values from String to Double
 
 *******************************************************************************/
-import java.io.Console;
+
+
  class Convert
 {   static String c = new String();
 
