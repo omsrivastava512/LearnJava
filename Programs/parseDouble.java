@@ -2,30 +2,37 @@
 Program to Convert Numeric values from String to Double
 
 *******************************************************************************/
+
  
 
  class Convert
+
+
+
+
 {   static String c = new String();
 
     static boolean check(final String c){
-    int i=0; 				//using i as an index variable to access array characters
-    while (c.charAt(i) == ' ') {
-            i++;
-        }
-    if(c.charAt(i)=='-'||c.charAt(i)=='+')
-        i++;				//increment i value if the user has input a signed number
-    
-  // Iterate through the string to check for valid numerical characters
-    while(i<c.length())			
-    {            
-      if(c.charAt(i)>='.' || c.charAt(i)<='9')		
-      	return true;
-      	if(c.charAt(i)=='/') 			//since '/' lies b/w '.' and '9' in the character map
-      	return false;
-      	i++;
-    }
-    //  
-	 return false;		
+        boolean chk=false;
+            int i=0; 				//using i as an index variable to access array characters
+            while (c.charAt(i) == ' ') {
+                    i++; 
+                }
+            if(c.charAt(i)=='-'||c.charAt(i)=='+')
+                i++;				//increment i value if the user has input a signed number
+            
+          // Iterate through the string to check for valid numerical characters
+            while(i<c.length())			
+            {            
+              if(c.charAt(i)>='.' && c.charAt(i)<='9')		
+              	chk=true;
+              	else return false;
+              	if(c.charAt(i)=='/') 			//since '/' lies b/w '.' and '9' in the character map
+              	return false;
+              	i++;
+            }
+            //  
+        	 return chk;		
 }
 /* Convert the given string to a double */
 static double stringToDouble(final String c) {
@@ -50,21 +57,22 @@ if(!check(c)) return 0;
         // Convert characters to double
         while ((i)<c.length()) {            
         
-           if(c.charAt(i)=='.')	{       	// Decimal found
+           if(c.charAt(i)=='.'&&decimal==0)	{       	// First decimal found
                j=i;
-           result+=.2;      // Exception
+               decimal=1;
+            result+=.2;      // Exception
            }
             result = result * 10 + ((int)c.charAt(i) - '0');
             i++;
         }
         
-    j++;
+    
 	// Storing decimal numbers 
    
         while(j<c.length()){		
             if(c.charAt(i)=='.')		// Found another decimal
             break;
-            decimal=decimal/10;		// Placing decimal before the numbers
+            result=result/10;		// Placing decimal before the numbers
             j++;
         }
         
