@@ -27,7 +27,7 @@ Program to Convert Numeric values from String to Double
               	return false;
               	i++;
             }
-            //  
+            
         	 return chk;		
 }
 /* Convert the given string to a double */
@@ -49,16 +49,20 @@ static double stringToDouble(final String c) {
       
 
 if(!check(c)) return 0;
-        int j=c.length();
+       
         // Convert characters to double
         while ((i)<c.length()) {            
-        
-           if(c.charAt(i)=='.'&&decimal==0)	{       	// First decimal found
-               j=i;
-               decimal=1;
-            result+=.2;      // Exception
-           }
-            result = result * 10 + ((int)c.charAt(i) - '0');
+        //code store numeric value in result variable
+            if(c.charAt(i)=='.'){
+                i++;
+                break;
+        }  
+            result = result * 10 + (c.charAt(i) - '0');
+                i++;
+        }
+        int j = i;
+        while(i<c.length()){
+            decimal=decimal*10+(c.charAt(i)-'0');
             i++;
         }
         
@@ -68,9 +72,11 @@ if(!check(c)) return 0;
         while(j<c.length()){		
             if(c.charAt(i)=='.')		// Found another decimal
             break;
-            result=result/10;		// Placing decimal before the numbers
+            decimal=decimal/10;		// Removing decimal after the numbers
             j++;
-        }
+        }		// Placing decimal before the numbers
+            
+
         
         
         // Apply sign
