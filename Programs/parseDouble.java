@@ -70,7 +70,7 @@ if(!check(c)) return 0;
 	// Storing decimal numbers 
    
         while(j<c.length()){		
-            if(c.charAt(i)=='.')		// Found another decimal
+            if(c.charAt(j)=='.')		// Found another decimal
             break;
             decimal=decimal/10;		// Removing decimal after the numbers
             j++;
