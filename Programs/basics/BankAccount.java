@@ -85,3 +85,7 @@ class Main {
     }
 
 }
+
+
+// Learnings: When you close a Scanner that’s using System.in, it closes the underlying input stream—meaning you can’t use System.in again later in the program. 
+// It's recommended to close sc at the end of the main()

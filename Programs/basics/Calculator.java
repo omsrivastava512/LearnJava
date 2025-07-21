@@ -106,3 +106,12 @@ class Main{
         System.out.println(cal1.divide(4,3));
     }
 }
+
+
+// Learning: Only integer division throws ArithmaticException on division by zero. 
+// That is because java uses two's complement for integers, and there's no bit pattern reserved for special values like Infinity or NaN.
+
+// In case of floating-point division, java has dedicated bit patterns for Infinity or NaN.
+// 5.0 / 0 -> Infinity
+// -5 / 0.0 -> -Infinity
+// 0.0 / 0 -> NaN
