@@ -7,6 +7,7 @@ package basics;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 class Book {
     String title, author, isbn;
@@ -90,35 +91,34 @@ class Library {
         books.add(new Book(sc));
     }
 
-    void searchByISBN(String isbn) {
-        for (Book book : books) {
-            if (book.getIsbn().equals(isbn)) {
-                book.display();
-                return;
+    // DRY: Generic search method using Predicate functional interface
+    private void search(Predicate<Book> condition) {
+        ArrayList<Book> results = new ArrayList<>();
+        for (Book book : books) { 
+            if (condition.test(book)) {
+                results.add(book);
             }
         }
-        System.out.println("No books found");
+        displaySearchResults(results);
+    }
+
+    void searchByISBN(String isbn) {
+        search(book->book.getIsbn().equals(isbn)) ;
     }
 
     void searchByTitle(String title) {
-        ArrayList<Book> results = new ArrayList<>();
-        for (Book book : books) {
-            if (book.getTitle().contains(title)) {
-                results.add(book);
-            }
-        }
-        displaySearchResults(results);
+       search(book->book.getTitle().toLowerCase().contains(title.toLowerCase())); 
     }
 
     void searchByAuthor(String author) {
-        ArrayList<Book> results = new ArrayList<>();
-        for (Book book : books) {
-            if (book.getAuthor().contains(author)) {
-                results.add(book);
-            }
-        }
-        displaySearchResults(results);
+        search(book->book.getAuthor().contains(author)) ;
     }
+
+  public  void searchAvailableBooks(){
+    search(book->book.getIsAvailable());
+  }
+
+  
 
     private void displaySearchResults(ArrayList<Book> results) {
         System.out.println("Found " + results.size() + " results!");
@@ -150,7 +150,7 @@ class Library {
     }
 }
 
- class Test {
+class Main {
     private static int testCount = 0;
     private static int passedTests = 0;
 
