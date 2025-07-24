@@ -10,7 +10,7 @@ import java.util.Scanner;
 class StudentRegistration   {
 
     StudentRegistration() {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // ❌❌ Not recommended
         System.out.print("Enter number of students to register:");
         int n = sc.nextInt();
         Student[] s = new Student[n];

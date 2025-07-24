@@ -360,3 +360,6 @@ class Main {
         System.out.println("=".repeat(60));
     }
 }
+
+
+// Learning: Scanners must be handled by main() function only and any other method using a scaner needs to be passed via argument
