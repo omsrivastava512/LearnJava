@@ -6,17 +6,16 @@
 // - Methods: calculateArea(), calculatePerimeter()
 // Use 'this()' for constructor chaining
 
+package basics2;
 public class Rectangle {
     double length, width;
 
     public Rectangle() {
-        this.length = 1;
-        this.width = 1;
+       this(1);
     }
 
     public Rectangle(double n) {
-        this.length = n;
-        this.width = n;
+        this(n,n);
     }
 
     public Rectangle(double l, double w){
@@ -33,5 +32,7 @@ public class Rectangle {
     }
 
 }
+
+// Learning : Learned about Constructot chaining using this() and super()
 
 
