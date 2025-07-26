@@ -9,7 +9,7 @@ package basics2;
 import basics.Student;
 
 class StudentManager {
-    private Student[] students;
+    private final Student[] students;
     private int count;
     private final static int MAX_SIZE = 100;
 
